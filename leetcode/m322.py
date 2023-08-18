@@ -7,4 +7,4 @@ class Solution:
                 # coinを複数枚使えるが、2枚使う時でも"dp[x - coin]"は
                 # 既にcoinを使った状態での値になるため単純に使う枚数は"dp[x - coin] + 1"でよい
                 dp[x] = min(dp[x], dp[x - coin] + 1)
-        return dp[-1] if dp[-1] != float("inf") else 0
+        return dp[-1] if dp[-1] != float("inf") else -1
