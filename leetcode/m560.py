@@ -1,6 +1,6 @@
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
-        # iまでの合計とjまでの合計の差がkならsum(nums[i]~nums[j])=kになる
+        # iまでの合計とjまでの合計の差がkならsum(nums[i+1]~nums[j])=kになる
         # nums[j]について考えた時、過去にnums[j]-kの値を持つnums[i]が存在していればi~jの配列の合計がkになる
         d = defaultdict(int)
         d[0] = 1

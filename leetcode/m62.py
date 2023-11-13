@@ -29,7 +29,7 @@ class Solution:
 
 # [10, 6, 3, 1]
 # [4, 3, 2, 1]
-# [1, 1, 1, None]
+# [1, 1, 1, 1]
 
 s = Solution()
 s.uniquePaths(3, 4)

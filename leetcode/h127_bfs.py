@@ -9,9 +9,11 @@ class Node:
 
 
 class Solution:
-    def make_word_cands(self, word_converter: dict[str], word: str, length: int) -> None:
+    def make_word_cands(
+        self, word_converter: dict[str], word: str, length: int
+    ) -> None:
         for i in range(length):
-            word_converter[word[:i] + "*" + word[i+1:]].add(word)
+            word_converter[word[:i] + "*" + word[i + 1 :]].add(word)
 
     def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
         length = len(beginWord)
@@ -26,12 +28,12 @@ class Solution:
             visited = node.visited.copy()
             visited.add(node.val)
             for i in range(length):
-                for w in word_converter[node.val[:i] + "*" + node.val[i+1:]]
+                for w in word_converter[node.val[:i] + "*" + node.val[i + 1 :]]:
                     if w == endWord:
                         return len(visited) + 1
                     if w not in node.visited:
                         queue.append(Node(w, visited))
         return 0
-    
-# visitedをnode毎に管理する必要がない
 
+
+# visitedをnode毎に管理する必要がない

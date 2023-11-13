@@ -1,3 +1,6 @@
+from typing import List
+
+
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         n = len(prices)
@@ -8,3 +11,7 @@ class Solution:
             min_vals[i] = min(min_vals[i - 1], prices[i])
             ans = max(ans, prices[i] - min_vals[i])
         return ans
+
+
+s = Solution()
+s.maxProfit([7, 1, 5, 3, 6, 4])
